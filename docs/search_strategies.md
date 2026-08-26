@@ -28,11 +28,7 @@ Retrieved: 635. Export: CSV summary / MEDLINE.
 
 **PubMed**
 ```
-("Psilocybine"[MeSH] OR psilocyb*[tiab]) AND ("Depression"[MeSH] OR "Depressive Disorder"[MeSH]
-OR "Anxiety"[MeSH] OR "Anxiety Disorders"[MeSH] OR depress*[tiab] OR anxiet*[tiab])
-AND (randomized controlled trial[pt] OR "clinical trial, phase ii"[pt] OR "clinical trial, phase iii"[pt]
-OR "clinical trial, phase iv"[pt] OR randomi*[tiab])
-NOT (systematic review[pt] OR meta-analysis[pt]) AND humans[mh] AND 2022:2026[dp]
+ (((("psilocyb*"[Title/Abstract] OR (("psilocybin"[MeSH Terms] OR "psilocybe"[MeSH Terms]))) AND ("depress*"[Title/Abstract] OR "anxiety*"[Title/Abstract] OR "depression"[MeSH Terms] OR "Depressive Disorder"[MeSH] OR "anxiety"[MeSH Terms] OR "Anxiety Disorders"[MeSH])) AND ((randomized controlled trial[pt] OR "clinical trial, phase ii"[pt] OR "clinical trial, phase iii"[pt] OR "clinical trial, phase iv"[pt] OR randomi*[tiab]))) NOT (("systematic review"[Publication Type] OR "meta analysis"[Publication Type] OR "clinical trial, phase i"[Publication Type]))) NOT ((((("lsd therapy"[Text Word] OR "lysergic"[Text Word] OR "lsd"[Text Word] OR "ayahuasca"[Text Word]) AND "iboga"[Text Word]) OR "mdma"[Text Word]) AND ("dmt"[Text Word] OR "dmt therapy"[Text Word])) OR ("peyote"[Text Word] OR "mescaline"[Text Word])) Filters: Humans, MEDLINE, from 2022 - 2026
 ```
 
 **Cochrane CENTRAL** (Trials tab)
