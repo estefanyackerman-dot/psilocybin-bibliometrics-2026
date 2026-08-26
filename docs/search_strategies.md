@@ -14,9 +14,9 @@ LINK https://www.webofscience.com/wos/alldb/summary/4fb38d7a-7c35-4ec2-8903-4ad1
 
 **Scopus**
 ```
-TITLE-ABS-KEY(psilocybin* AND (depress* OR anxiet* OR anxious)) AND PUBYEAR > 2021 AND PUBYEAR < 2027
+TITLE-ABS-KEY ( ( psilocybin OR psilocibin OR psilocybe OR "psilocybin therapy" OR "psilocybin-assisted therapy" OR "psilocybin assisted therapy" ) AND ( depress* OR dysthymi* OR anxi* OR "depressive disorder" OR "major depressive disorder" OR "treatment-resistant depression" ) ) AND ( LIMIT-TO ( DOCTYPE , "ar" ) OR LIMIT-TO ( DOCTYPE , "re" ) ) AND PUBYEAR > 2021 AND PUBYEAR < 2027
 ```
-Retrieved: 1,163. Export: CSV, full record.
+Retrieved: 1,045. Export: CSV, full record.
 
 **PubMed** (bibliometric string)
 ```
