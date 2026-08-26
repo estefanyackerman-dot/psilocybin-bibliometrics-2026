@@ -7,7 +7,6 @@ All searches executed on 27 August 2026. No language limit; no full-text availab
 **Web of Science Core Collection** (advanced search)
 ```
 (( TS=(psilocyb*) OR TS=("psilocybin therapy") OR TS=("psilocybin-assisted therapy") OR TS=("psilocybin assisted therapy") OR TI=(psilocybin OR psilocybe OR psilocibin) OR AB=(psilocybin OR psilocybe OR psilocibin) ) AND ( TS=(depress*) OR TS=(anxiety) OR TS=(dysthymia) OR TS=("depression and anxiety") OR TI=(depression OR depressive OR anxiety OR anxious) OR AB=(depression OR depressive OR anxiety OR anxious))) and 2022 or 2023 or 2024 or 2025 or 2026 (Publication Years) and Web of Science Core Collection (Database)
-
 ```
 Refined: PY=2022-2026; Retrieved: 1,828.  y Web of Science Core Collection (Database)
 LINK https://www.webofscience.com/wos/alldb/summary/4fb38d7a-7c35-4ec2-8903-4ad15ee16153-01c504d6de/relevance/1
@@ -30,6 +29,7 @@ Retrieved: 635. Export: CSV summary / MEDLINE.
 ```
  (((("psilocyb*"[Title/Abstract] OR (("psilocybin"[MeSH Terms] OR "psilocybe"[MeSH Terms]))) AND ("depress*"[Title/Abstract] OR "anxiety*"[Title/Abstract] OR "depression"[MeSH Terms] OR "Depressive Disorder"[MeSH] OR "anxiety"[MeSH Terms] OR "Anxiety Disorders"[MeSH])) AND ((randomized controlled trial[pt] OR "clinical trial, phase ii"[pt] OR "clinical trial, phase iii"[pt] OR "clinical trial, phase iv"[pt] OR randomi*[tiab]))) NOT (("systematic review"[Publication Type] OR "meta analysis"[Publication Type] OR "clinical trial, phase i"[Publication Type]))) NOT ((((("lsd therapy"[Text Word] OR "lysergic"[Text Word] OR "lsd"[Text Word] OR "ayahuasca"[Text Word]) AND "iboga"[Text Word]) OR "mdma"[Text Word]) AND ("dmt"[Text Word] OR "dmt therapy"[Text Word])) OR ("peyote"[Text Word] OR "mescaline"[Text Word])) Filters: Humans, MEDLINE, from 2022 - 2026
 ```
+98 RESULTADOS
 
 **Cochrane CENTRAL** (Trials tab)
 ```
