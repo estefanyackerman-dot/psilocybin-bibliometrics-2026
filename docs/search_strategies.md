@@ -20,10 +20,9 @@ Retrieved: 1,045. Export: CSV, full record.
 
 **PubMed** (bibliometric string)
 ```
-("Psilocybine"[MeSH] OR psilocyb*[tiab]) AND ("Depression"[MeSH] OR "Depressive Disorder"[MeSH]
-OR "Anxiety"[MeSH] OR "Anxiety Disorders"[MeSH] OR depress*[tiab] OR anxiet*[tiab]) AND 2022:2026[dp]
+Search: ("psilocyb*"[Title/Abstract] AND ("depressi*"[Title/Abstract] OR "anxiety*"[Title/Abstract])) OR (("psilocybin"[MeSH Terms] OR "psilocybe"[MeSH Terms]) AND ("depression"[MeSH Terms] OR "anxiety"[MeSH Terms])) Filters: MEDLINE, from 2022 - 2026
 ```
-Retrieved: 918. Export: CSV summary / MEDLINE.
+Retrieved: 635. Export: CSV summary / MEDLINE.
 
 ## Meta-analytic arm (restrictive strategies; execution pending PROSPERO confirmation)
 
