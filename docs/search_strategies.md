@@ -6,10 +6,11 @@ All searches executed on 27 August 2026. No language limit; no full-text availab
 
 **Web of Science Core Collection** (advanced search)
 ```
-((((TS=(psilocybin therapy )) OR TS=(psilocybin assisted therapy)) OR (TI=(psilocybin) OR TI=(psilocybe) OR TI=("psilocibin") OR AB=(psilocybin) OR AB=(psilocybe) OR AB=("psilocibin"))) AND (((TS=("depression and anxiety")) OR TS=(dysthymia)) OR (TI=("depression") OR TI=("depressive") OR TI=("anxiety") OR AB=("depression") OR AB=("depressive") OR AB=("anxiety"))
+(( TS=(psilocyb*) OR TS=("psilocybin therapy") OR TS=("psilocybin-assisted therapy") OR TS=("psilocybin assisted therapy") OR TI=(psilocybin OR psilocybe OR psilocibin) OR AB=(psilocybin OR psilocybe OR psilocibin) ) AND ( TS=(depress*) OR TS=(anxiety) OR TS=(dysthymia) OR TS=("depression and anxiety") OR TI=(depression OR depressive OR anxiety OR anxious) OR AB=(depression OR depressive OR anxiety OR anxious))) and 2022 or 2023 or 2024 or 2025 or 2026 (Publication Years) and Web of Science Core Collection (Database)
 
 ```
-Refined: PY=2022-2026; document types Article, Review, Early Access. Retrieved: 1,433. Export: Plain Text, full record with cited references.
+Refined: PY=2022-2026; Retrieved: 1,828.  y Web of Science Core Collection (Database)
+LINK https://www.webofscience.com/wos/alldb/summary/4fb38d7a-7c35-4ec2-8903-4ad15ee16153-01c504d6de/relevance/1
 
 **Scopus**
 ```
