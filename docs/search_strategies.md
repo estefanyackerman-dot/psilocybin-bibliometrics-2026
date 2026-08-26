@@ -27,9 +27,9 @@ Retrieved: 635. Export: CSV summary / MEDLINE.
 
 **PubMed**
 ```
- (((("psilocyb*"[Title/Abstract] OR (("psilocybin"[MeSH Terms] OR "psilocybe"[MeSH Terms]))) AND ("depress*"[Title/Abstract] OR "anxiety*"[Title/Abstract] OR "depression"[MeSH Terms] OR "Depressive Disorder"[MeSH] OR "anxiety"[MeSH Terms] OR "Anxiety Disorders"[MeSH])) AND ((randomized controlled trial[pt] OR "clinical trial, phase ii"[pt] OR "clinical trial, phase iii"[pt] OR "clinical trial, phase iv"[pt] OR randomi*[tiab]))) NOT (("systematic review"[Publication Type] OR "meta analysis"[Publication Type] OR "clinical trial, phase i"[Publication Type]))) NOT ((((("lsd therapy"[Text Word] OR "lysergic"[Text Word] OR "lsd"[Text Word] OR "ayahuasca"[Text Word]) AND "iboga"[Text Word]) OR "mdma"[Text Word]) AND ("dmt"[Text Word] OR "dmt therapy"[Text Word])) OR ("peyote"[Text Word] OR "mescaline"[Text Word])) Filters: Humans, MEDLINE, from 2022 - 2026
+ (((("psilocyb*"[Title/Abstract] OR (("psilocybin"[MeSH Terms] OR "psilocybe"[MeSH Terms]))) AND ("depress*"[Title/Abstract] OR "anxiety*"[Title/Abstract] OR "depression"[MeSH Terms] OR "Depressive Disorder"[MeSH] OR "anxiety"[MeSH Terms] OR "Anxiety Disorders"[MeSH])) AND ((randomized controlled trial[pt] OR "clinical trial, phase ii"[pt] OR "clinical trial, phase iii"[pt] OR "clinical trial, phase iv"[pt] OR randomi*[tiab]))) NOT (("systematic review"[Publication Type] OR "meta analysis"[Publication Type] OR "clinical trial, phase i"[Publication Type]))) AND ((medline[Filter]) AND (humans[Filter]) AND (2022:2026[pdat])) Filters: Humans, MEDLINE
 ```
-98 RESULTADOS
+102 RESULTADOS
 
 **Cochrane CENTRAL** (Trials tab)
 ```
