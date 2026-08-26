@@ -1,12 +1,13 @@
 # Search strategies (PRISMA-S documentation)
 
-All searches executed on 11 August 2026. No language limit; no full-text availability limit.
+All searches executed on 27 August 2026. No language limit; no full-text availability limit.
 
 ## Bibliometric arm (broad strategies; reviews eligible)
 
 **Web of Science Core Collection** (advanced search)
 ```
-TS=(psilocybin* AND (depress* OR anxiet* OR anxious))
+((((TS=(psilocybin therapy )) OR TS=(psilocybin assisted therapy)) OR (TI=(psilocybin) OR TI=(psilocybe) OR TI=("psilocibin") OR AB=(psilocybin) OR AB=(psilocybe) OR AB=("psilocibin"))) AND (((TS=("depression and anxiety")) OR TS=(dysthymia)) OR (TI=("depression") OR TI=("depressive") OR TI=("anxiety") OR AB=("depression") OR AB=("depressive") OR AB=("anxiety"))
+
 ```
 Refined: PY=2022-2026; document types Article, Review, Early Access. Retrieved: 1,433. Export: Plain Text, full record with cited references.
 
