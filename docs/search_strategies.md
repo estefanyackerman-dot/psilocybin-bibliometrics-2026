@@ -44,10 +44,12 @@ APA PsycInfo <1806 to August 2026 Week 3> 287
 ```
 •		limit  to yr="2022 -Current" HITS 675
 
-**Europe PMC** (complementary preprint source, includes medRxiv)
+**medRxiv** (complementary preprint source, includes medRxiv)
+
 ```
-(psilocybin*) AND (depress* OR anxiet* OR anxious) AND (SRC:PPR) AND (FIRST_PDATE:[2022-01-01 TO 2026-12-31])
+for term "psilocybin " and title "psilocybin or psilocibine or psiloc* and (depress* or anxiet* or anxious))" (match all words) and abstract or title "clinical trail" (match all words) and posted between "01 Jan, 2022 and 31 Dec, 2026"
 ```
+"01 Jan, 2022 and 31 Dec, 2026" 135 Results
 
 ## Deduplication
 
