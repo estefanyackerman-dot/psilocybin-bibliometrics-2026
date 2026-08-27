@@ -44,12 +44,22 @@ APA PsycInfo <1806 to August 2026 Week 3> 287
 ```
 •		limit  to yr="2022 -Current" HITS 675
 
-**medRxiv** (complementary preprint source, includes medRxiv)
+
+**medRxiv** medRxiv THE PREPRINT SERVER FOR HEALTH SCIENCES (complementary preprint source, includes medRxiv)
 
 ```
 for term "psilocybin " and title "psilocybin or psilocibine or psiloc* and (depress* or anxiet* or anxious))" (match all words) and abstract or title "clinical trail" (match all words) and posted between "01 Jan, 2022 and 31 Dec, 2026"
 ```
 "01 Jan, 2022 and 31 Dec, 2026" 135 Results
+
+
+**Europe PMC** (complementary preprint source, includes medRxiv)
+
+```
+(( ( TITLE_ABS:psilocyb* OR TITLE_ABS:"psilocybin" OR TITLE_ABS:psilocybe* ) AND ( TITLE_ABS:depress* OR TITLE_ABS:anxiety OR TITLE_ABS:"depressive disorder" OR TITLE_ABS:"anxiety disorders" ) AND ( TITLE_ABS:randomi* OR TITLE_ABS:"randomized controlled trial" OR TITLE_ABS:"clinical trial" ) ) NOT ( TITLE_ABS:"systematic review" OR TITLE_ABS:"meta-analysis" ) OR ( TITLE_ABS:psilocyb* OR TITLE_ABS:psilocybe* OR TITLE_ABS:LSD OR TITLE_ABS:lysergic OR TITLE_ABS:ayahuasca OR TITLE_ABS:iboga* OR TITLE_ABS:MDMA OR TITLE_ABS:DMT OR TITLE_ABS:peyote OR TITLE_ABS:mescaline ) AND ( TITLE_ABS:depress* OR TITLE_ABS:anxiety OR TITLE_ABS:"depressive disorder" OR TITLE_ABS:"anxiety disorders" ) ) AND (SRC:PPR) AND (FIRST_PDATE:[2022 TO 2026])
+```
+
+RESULTS: 29
 
 ## Deduplication
 
