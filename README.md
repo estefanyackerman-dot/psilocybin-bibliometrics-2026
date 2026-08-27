@@ -6,12 +6,12 @@ Hybrid bibliometric analysis and systematic review with meta-analysis of randomi
 
 ## Search summary (all searches run 11 August 2026)
 
-| Database | Records | Unique contribution |
-|---|---|---|
-| Web of Science Core Collection | 1,433 | 1,431 (2 retracted articles excluded) |
-| Scopus | 1,163 | 361 |
-| PubMed | 918 | 129 |
-| **Unique tri-database corpus** | **3,514 raw** | **1,921** |
+| Database | Records | Unique contribution | Records 2608 | AAR |
+|---|---|---|---|---|
+| Web of Science Core Collection | 1,433 | 1,431 (2 retracted articles excluded) | 1,828 |
+| Scopus | 1,163 | 361 | 1,045 | |
+| PubMed | 918 | 129 | 635 | |
+| **Unique tri-database corpus** | **3,514 raw** | **1,921** | **3,508 raw**| |
 
 Deduplication priority: WoS > Scopus > PubMed, matched first by normalized DOI and then by normalized title. Two retracted articles (DOI 10.1177/02698811241234247 and 10.3389/fnins.2023.1168911) were excluded from the analytical corpus and are declared in Methods.
 
