@@ -31,12 +31,15 @@ Retrieved: 635. Export: CSV summary / MEDLINE.
 ```
 102 RESULTADOS
 
-**Cochrane CENTRAL** (Trials tab)
+**Cochrane CENTRAL** (Trials tab) EBM Reviews - Cochrane Central Register of Controlled Trials <May 2026> OVID
+Buscar en todas las revistas de Ovid (Referencias + Abstracts + Revistas Suscritas) 143
+EBM Reviews - Cochrane Central Register of Controlled Trials <July 2026> 245
+APA PsycInfo <1806 to August 2026 Week 3> 287
+
 ```
-#1 (psilocybin*):ti,ab,kw
-#2 (depress* OR anxiet* OR anxious):ti,ab,kw
-#3 #1 AND #2, publication date 2022-2026
+((("psilocyb*".ab. or "psilocyb*".ti.) and (("depressi*".ab. or "depressi*".ti. or (depresive disorders or major depression or depression).hw.) or ("anxiety*".ab. or "anxiety*".ti. or (anxiety or Anxiety Disorders or anxious).hw.))) or ((("psilocybin" or "psilocybe") and ("depression" or "anxiety")).mh.)) not (("lsd therapy" or "ayahuasca" or "iboga" or "mdma" or "dmt" or "mescaline" or "peyote" or "dmt therapy" or "lysergic" or "lsd").kw. or ("systematic" or "meta-analysis").ti.)
 ```
+•		limit  to yr="2022 -Current" HITS 675
 
 **Europe PMC** (complementary preprint source, includes medRxiv)
 ```
