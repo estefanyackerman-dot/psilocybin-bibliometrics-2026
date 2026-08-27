@@ -32,8 +32,11 @@ Retrieved: 635. Export: CSV summary / MEDLINE.
 102 RESULTADOS
 
 **Cochrane CENTRAL** (Trials tab) EBM Reviews - Cochrane Central Register of Controlled Trials <May 2026> OVID
+
 Buscar en todas las revistas de Ovid (Referencias + Abstracts + Revistas Suscritas) 143
+
 EBM Reviews - Cochrane Central Register of Controlled Trials <July 2026> 245
+
 APA PsycInfo <1806 to August 2026 Week 3> 287
 
 ```
