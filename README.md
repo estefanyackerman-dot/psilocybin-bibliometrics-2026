@@ -21,8 +21,9 @@ Full search strategies for every database are in `docs/search_strategies.md` and
 
 ```
 data/       corpus_unique_tridatabase.csv  (derived, deduplicated corpus: source, title, year, DOI, document type)
-scripts/    01_deduplication_pipeline.py   (executable pipeline actually used)
-            02_bibliometrix_replication.R  (replication in R/bibliometrix + VOSviewer export)
+scripts/    01_deduplication_pipeline.py   (executable pipeline; accepts WoS RIS,
+                                             Scopus CSV and PubMed CSV paths)
+            02_bibliometrix_replication.R  (replication in R/bibliometrix from WoS RIS)
 results/    tables/  T0-T8 (PRISMA-S flow, annual production, sources, authors, countries, keywords, most cited, document types)
             figures/ F1-F4 (600 dpi TIFF for submission + PNG previews)
 docs/       Protocol v1.0 (docx), search_strategies.md
@@ -31,6 +32,16 @@ docs/       Protocol v1.0 (docx), search_strategies.md
 ## Raw database exports
 
 Raw exports from Web of Science, Scopus and PubMed are not redistributed in this repository because their licenses do not permit public redistribution of full records. They are fully regenerable with the documented strategies and dates, and are available from the corresponding author for verification purposes.
+
+To run the pipeline with exports stored outside the repository:
+
+```text
+python scripts\01_deduplication_pipeline.py --wos "path\savedrecs (1).ris" "path\savedrecs (2).ris" --scopus path\scopus.csv --pubmed path\pubmed.csv
+```
+
+WoS RIS files are processed first, followed by Scopus and PubMed. Duplicate
+records are matched by normalized DOI and then normalized title; the first
+database in that order is retained.
 
 ## Key descriptive results
 
