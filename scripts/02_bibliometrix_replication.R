@@ -1,14 +1,29 @@
 # Replication of the bibliometric arm in R/bibliometrix
 # Psilocybin and depression/anxiety, 2022-2026 (WoS analytical corpus)
-# Requires: raw/savedrecs.txt (WoS Plain Text, full record with cited references)
+# Requires: one or more WoS RIS/EndNote exports in raw/ (or pass paths as
+# command-line arguments). The two supplied savedrecs RIS files can be passed
+# together; they are combined before analysis.
 
 library(bibliometrix)
 library(dplyr)
 
-RETRACTED <- c("10.1177/02698811241234247", "10.3389/FNINS.2023.1168911")
+RETRACTED <- tolower(c("10.1177/02698811241234247", "10.3389/FNINS.2023.1168911"))
 
-M <- convert2df("raw/savedrecs.txt", dbsource = "wos", format = "plaintext")
-M <- M %>% dplyr::filter(!(DI %in% RETRACTED))
+args <- commandArgs(trailingOnly = TRUE)
+wos_files <- if (length(args) > 0) args else list.files("raw", pattern = "\\.(ris|enw)$",
+                                                          full.names = TRUE,
+                                                          ignore.case = TRUE)
+if (length(wos_files) == 0) stop("No WoS RIS files found. Pass their paths as arguments.")
+M <- dplyr::bind_rows(lapply(wos_files, function(path) {
+  convert2df(path, dbsource = "wos", format = "endnote")
+}))
+M <- M %>%
+  dplyr::mutate(.doi = tolower(trimws(DI)),
+                .title = tolower(gsub("[^[:alnum:]]", "", TI))) %>%
+  dplyr::filter(!(.doi %in% RETRACTED)) %>%
+  dplyr::filter(!duplicated(.doi) | .doi == "") %>%
+  dplyr::filter(!duplicated(.title) | .title == "") %>%
+  dplyr::select(-.doi, -.title)
 
 res <- biblioAnalysis(M)
 S <- summary(res, k = 20, pause = FALSE)
@@ -34,5 +49,5 @@ M <- metaTagExtraction(M, Field = "AU_CO", sep = ";")
 NetCo <- biblioNetwork(M, analysis = "collaboration", network = "countries", sep = ";")
 networkPlot(NetCo, n = 25, Title = "Country collaboration", type = "circle", labelsize = 0.8)
 
-# Export for VOSviewer (co-citation uses the CR field of the Plain Text export)
-# In VOSviewer: Create > map based on bibliographic data > read WoS file raw/savedrecs.txt
+# Export for VOSviewer (co-citation uses the CR field retained in the RIS export)
+# In VOSviewer: Create > map based on bibliographic data > read the WoS RIS file.
