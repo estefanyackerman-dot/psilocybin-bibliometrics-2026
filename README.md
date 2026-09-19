@@ -43,6 +43,21 @@ WoS RIS files are processed first, followed by Scopus and PubMed. Duplicate
 records are matched by normalized DOI and then normalized title; the first
 database in that order is retained.
 
+### Running on Windows without changing the PowerShell execution policy
+
+`scripts/run_deduplication.bat` and `scripts/run_replication.bat` invoke the
+project's `.venv\Scripts\python.exe` (or `Rscript`) directly through `cmd.exe`.
+They do not activate the virtual environment with `Activate.ps1`, so PowerShell
+never blocks the script and `Set-ExecutionPolicy -Scope Process` is not needed:
+
+```text
+scripts\run_deduplication.bat --scopus raw\scopus.csv --pubmed raw\pubmed.csv
+scripts\run_replication.bat
+```
+
+Both accept the same arguments as the underlying Python/R scripts (or none, to
+use the defaults in `raw/`).
+
 ## Key descriptive results
 
 Annual production grew at a compound rate of 27.3 percent (2022 to 2025); 2026 is partial at the search date. Leading countries: USA, United Kingdom, Canada, Australia, Switzerland. The most frequent non-generic author keywords (lsd, ketamine, mdma, psychedelic-assisted therapy, psychotherapy) locate the corpus within the comparative psychedelic therapeutics literature.
