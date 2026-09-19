@@ -1,12 +1,12 @@
 Stage,n
-WoS raw,1846
+WoS raw,3847
 WoS retracted removed,2
-WoS unique,1822
+WoS unique,1823
 Scopus raw,1055
 Scopus duplicates vs WoS,825
 Scopus unique contribution,227
 PubMed raw,937
 PubMed duplicates vs WoS+Scopus,879
 PubMed unique contribution,58
-Total raw,3838
-Final unique corpus,2107
+Total raw,5839
+Final unique corpus,2108
