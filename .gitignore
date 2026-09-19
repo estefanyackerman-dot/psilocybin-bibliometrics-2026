@@ -2,3 +2,4 @@
 # licensing reasons. Place them here for local runs of scripts/01_deduplication_pipeline.py
 # and scripts/02_bibliometrix_replication.R; they are excluded from version control.
 raw/
+https://github.com/estefanyackerman-dot/psilocybin-bibliometrics-2026/tree/patch-1/raw
