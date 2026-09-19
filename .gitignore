@@ -1,0 +1,4 @@
+# Raw database exports (WoS, Scopus, PubMed) are not redistributed for
+# licensing reasons. Place them here for local runs of scripts/01_deduplication_pipeline.py
+# and scripts/02_bibliometrix_replication.R; they are excluded from version control.
+raw/
