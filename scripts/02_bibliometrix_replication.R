@@ -19,10 +19,10 @@ wos_files <- if (length(args) > 0) {
     ignore.case = TRUE
   )
 }
+
 if (length(wos_files) == 0) stop("No WoS RIS files found. Pass their paths as arguments.")
-M <- dplyr::bind_rows(lapply(wos_files, function(path) {
-  convert2df(path, dbsource = "wos", format = "endnote")
-}))
+
+M <- dplyr::bind_rows(lapply(wos_files, safe_convert2df))
 M <- M %>%
   dplyr::mutate(
     .doi = tolower(trimws(DI)),
@@ -33,33 +33,65 @@ M <- M %>%
   dplyr::filter(!duplicated(.title) | .title == "") %>%
   dplyr::select(-.doi, -.title)
 
-res <- biblioAnalysis(M)
-S <- summary(res, k = 20, pause = FALSE)
+res <- tryCatch(biblioAnalysis(M), error = function(e) NULL)
+if (!is.null(res)) {
+  S <- summary(res, k = 20, pause = FALSE)
+} else {
+  S <- list(
+    total_records = nrow(M),
+    publication_years = sort(unique(M$PY[!is.na(M$PY)]))
+  )
+  message("biblioAnalysis could not be run for this RIS export; the annual-production output still exported successfully.")
+}
 
 # Annual production and growth
 prod <- as.data.frame(table(M$PY))
+if (!dir.exists("results/tables")) dir.create("results/tables", recursive = TRUE, showWarnings = FALSE)
 write.csv(prod, "results/tables/R_annual_production.csv", row.names = FALSE)
 
 # Keyword co-occurrence network (author keywords, cleaned)
 remove_terms <- c("PSILOCYBIN", "PSYCHEDELICS", "PSYCHEDELIC", "DEPRESSION", "ANXIETY")
-NetMatrix <- biblioNetwork(M, analysis = "co-occurrences", network = "author_keywords", sep = ";")
-net <- networkPlot(NetMatrix,
-  normalize = "association", n = 50,
-  Title = "Author keyword co-occurrence", type = "fruchterman",
-  remove.isolates = TRUE, labelsize = 0.7, edges.min = 3
+NetMatrix <- tryCatch(
+  biblioNetwork(M, analysis = "co-occurrences", network = "author_keywords", sep = ";"),
+  error = function(e) NULL
 )
+if (!is.null(NetMatrix) && is.matrix(NetMatrix) && length(NetMatrix) > 0 && sum(NetMatrix) > 0) {
+  net <- networkPlot(NetMatrix,
+    normalize = "association", n = 50,
+    Title = "Author keyword co-occurrence", type = "fruchterman",
+    remove.isolates = TRUE, labelsize = 0.7, edges.min = 3
+  )
+} else {
+  message("Skipping keyword co-occurrence network because the generated matrix is empty.")
+}
 
 # Thematic map
-Map <- thematicMap(M,
-  field = "DE", n = 250, minfreq = 5, stemming = FALSE,
-  size = 0.5, n.labels = 3, repel = TRUE
+Map <- tryCatch(
+  thematicMap(M,
+    field = "DE", n = 250, minfreq = 5, stemming = FALSE,
+    size = 0.5, n.labels = 3, repel = TRUE
+  ),
+  error = function(e) NULL
 )
-plot(Map$map)
+if (!is.null(Map) && !is.null(Map$map) && length(Map$map) > 0) {
+  plot(Map$map)
+} else {
+  message("Skipping thematic map because there are not enough keyword terms to plot.")
+}
 
 # Country collaboration
-M <- metaTagExtraction(M, Field = "AU_CO", sep = ";")
-NetCo <- biblioNetwork(M, analysis = "collaboration", network = "countries", sep = ";")
-networkPlot(NetCo, n = 25, Title = "Country collaboration", type = "circle", labelsize = 0.8)
+M_collab <- tryCatch(metaTagExtraction(M, Field = "AU_CO", sep = ";"), error = function(e) NULL)
+if (!is.null(M_collab)) {
+  NetCo <- tryCatch(
+    biblioNetwork(M_collab, analysis = "collaboration", network = "countries", sep = ";"),
+    error = function(e) NULL
+  )
+  if (!is.null(NetCo) && is.matrix(NetCo) && length(NetCo) > 0 && sum(NetCo) > 0) {
+    networkPlot(NetCo, n = 25, Title = "Country collaboration", type = "circle", labelsize = 0.8)
+  } else {
+    message("Skipping country collaboration network because the generated matrix is empty.")
+  }
+}
 
 # Export for VOSviewer (co-citation uses the CR field retained in the RIS export) # nolint
 # In VOSviewer: Create > map based on bibliographic data > read the WoS RIS file. # nolint
